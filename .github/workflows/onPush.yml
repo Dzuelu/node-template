@@ -1,0 +1,36 @@
+name: Lint and Testing
+
+on: push
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18
+
+      - shell: sh
+        run: npm ci
+
+      - shell: sh
+        run: npm run lint
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18
+
+      - shell: sh
+        run: npm ci
+
+      - shell: sh
+        run: npm run test:unit

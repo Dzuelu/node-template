@@ -1,0 +1,21 @@
+{
+  "author": "Dzuelu <Dzuelu@users.noreply.github.com>",
+  "dependencies": {},
+  "description": "",
+  "devDependencies": {
+    "@types/jest": "29.x",
+    "jest": "29.x",
+    "ts-jest": "29.x",
+    "typescript": "5.2.x"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "name": "node-template",
+  "scripts": {
+    "test:unit": "jest tests/*",
+    "test": "jest"
+  },
+  "version": "1.0.0"
+}
