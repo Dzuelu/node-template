@@ -1,4 +1,4 @@
-import { tempFunction } from "index";
+import { tempFunction } from 'index';
 
 describe('sample description', () => {
   it('sample test', () => {

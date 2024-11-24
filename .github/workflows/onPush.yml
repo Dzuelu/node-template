@@ -3,7 +3,7 @@ name: Lint and Testing
 on: push
 
 jobs:
-  lint:
+  lint-and-test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -13,24 +13,11 @@ jobs:
         with:
           node-version: 18
 
-      - run: npm ci
+      - run: npm install -g yarn
         shell: sh
 
-      - run: npm run lint
+      - run: yarn lint
         shell: sh
 
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 18
-
-      - run: npm ci
-        shell: sh
-
-      - run: npm run test:unit
+      - run: yarn test:unit
         shell: sh
